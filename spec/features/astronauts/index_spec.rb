@@ -22,4 +22,8 @@ RSpec.describe 'Astronauts index page' do
     expect(page).to have_content(@astronaut_3.age)
     expect(page).to have_content(@astronaut_3.job)
   end
+
+  it 'displays the average age of all astronauts' do
+    expect(page).to have_content("Average age of the astronauts: #{Astronaut.average_age}")
+  end
 end
