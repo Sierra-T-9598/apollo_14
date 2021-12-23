@@ -11,4 +11,8 @@ class Astronaut < ApplicationRecord
     missions = self.missions.order(:title)
     missions.pluck(:title)
   end
+
+  def total_time_in_space
+    missions.sum(:time_in_space)
+  end
 end
